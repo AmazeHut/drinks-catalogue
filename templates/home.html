@@ -5,7 +5,7 @@
 {% block content %}
 
 {% for drink in drinks %}
-    <!-- {% if loop.index != 2 %}
+<!-- {% if loop.index != 2 %}
         <div style="padding: 10px;
                     background-color: #EEE;
                     margin: 20px">
@@ -14,37 +14,39 @@
         </div>
     {% endif %} -->
 
-      <!-- card start -->
-  <div class="col-12 col-lg-4 col-md-6 col-sm-12">
-    <div class="card mt-5" style="width: 18rem;">
-      <img src="static/images/{{ drink.image_url }}" class="card-img-top" alt="..." style="height: 10rem;">
-      <div class="card-body">
-        <h5 class="card-title">{{ drink.name }}</h5>
-        <p class="card-text">{{ drink.description }}</p>
-      </div>
-            <ul class="list-group list-group-flush container-fluid">
-                <li class="list-group-item">Category : {{ drink.category }}</li>
-                <li class="list-group-item">Flavour : {{ drink.flavor_profile }}</li>
-              <li class="list-group-item">
-                  {% for ingred in drink.ingredients %}
-                    <span class="badge rounded-pill text-bg-primary">{{ ingred }}</span>
-                  {% endfor %}
-              </li>
-              <li class="list-group-item">
-                    {% for diet in drink.dietary_preferences %}
-                      <span class="badge rounded-pill text-bg-success">{{ diet }}</span>
-                    {% endfor %}
-              </li>
-                <li class="list-group-item">
-                        {% for allergy in drink.allergy_info %}
-                          <span class="badge rounded-pill text-bg-danger">{{ allergy }}</span>
-                        {% endfor %}
-                  </li>
-
-            </ul>
+<!-- card start -->
+<div class="col-12 col-lg-4 col-md-6 col-sm-12">
+  <div class="card mt-5" style="width: 18rem;">
+    <div class="img-box">
+      <img src="static/images/{{ drink.image_url }}" class="card-img-top" alt="..." style="height: 20rem;">
     </div>
+    <div class="card-body">
+      <h5 class="card-title">{{ drink.name }}</h5>
+      <p class="card-text">{{ drink.description }}</p>
+    </div>
+    <ul class="list-group list-group-flush container-fluid">
+      <li class="list-group-item">Category : {{ drink.category }}</li>
+      <li class="list-group-item">Flavour : {{ drink.flavor_profile }}</li>
+      <li class="list-group-item">
+        {% for ingred in drink.ingredients %}
+        <span class="badge rounded-pill text-bg-primary">{{ ingred }}</span>
+        {% endfor %}
+      </li>
+      <li class="list-group-item">
+        {% for diet in drink.dietary_preferences %}
+        <span class="badge rounded-pill text-bg-success">{{ diet }}</span>
+        {% endfor %}
+      </li>
+      <li class="list-group-item">
+        {% for allergy in drink.allergy_info %}
+        <span class="badge rounded-pill text-bg-danger">{{ allergy }}</span>
+        {% endfor %}
+      </li>
+
+    </ul>
   </div>
-    <!-- card end -->
+</div>
+<!-- card end -->
 
 {% endfor %}
 
