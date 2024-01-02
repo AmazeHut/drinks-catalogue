@@ -4,51 +4,61 @@
 
 {% block content %}
 
-{% for drink in drinks %}
-<!-- {% if loop.index != 2 %}
-        <div style="padding: 10px;
-                    background-color: #EEE;
-                    margin: 20px">
-            <p>#{{ loop.index }}</p>
-            <p style="font-size: 24px">{{ comment | upper }}</p>
-        </div>
-    {% endif %} -->
+{% if drinks %}
 
-<!-- card start -->
-<div class="col-12 col-lg-4 col-md-6 col-sm-12">
-  <div class="card mt-5" style="width: 18rem;">
-    <div class="img-box">
-      <img src="/static/images/{{ drink.image_url }}" class="card-img-top" alt="..." style="height: 20rem;">
-    </div>
-    <div class="card-body">
-      <h5 class="card-title">{{ drink.name }}</h5>
-      <p class="card-text">{{ drink.description }}</p>
-    </div>
-    <ul class="list-group list-group-flush container-fluid">
-      <li class="list-group-item">Category : {{ drink.category }}</li>
-      <li class="list-group-item">Flavour : {{ drink.flavor_profile }}</li>
-      <li class="list-group-item">
-        {% for ingred in drink.ingredients %}
-        <span class="badge rounded-pill text-bg-primary">{{ ingred }}</span>
-        {% endfor %}
-      </li>
-      <li class="list-group-item">
-        {% for diet in drink.dietary_preferences %}
-        <span class="badge rounded-pill text-bg-success">{{ diet }}</span>
-        {% endfor %}
-      </li>
-      <li class="list-group-item">
-        {% for allergy in drink.allergy_info %}
-        <span class="badge rounded-pill text-bg-danger">{{ allergy }}</span>
-        {% endfor %}
-      </li>
+  {% for drink in drinks %}
+  <!-- {% if loop.index != 2 %}
+          <div style="padding: 10px;
+                      background-color: #EEE;
+                      margin: 20px">
+              <p>#{{ loop.index }}</p>
+              <p style="font-size: 24px">{{ comment | upper }}</p>
+          </div>
+      {% endif %} -->
 
-    </ul>
+  <!-- card start -->
+  <div class="col-12 col-lg-4 col-md-6 col-sm-12">
+    <div class="card mt-5" style="width: 18rem;">
+      <div class="img-box">
+        <img src="/static/images/{{ drink.image_url }}" class="card-img-top" alt="..." style="height: 20rem;">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{ drink.name }}</h5>
+        <p class="card-text">{{ drink.description }}</p>
+      </div>
+      <ul class="list-group list-group-flush container-fluid">
+        <li class="list-group-item">Category : {{ drink.category }}</li>
+        <li class="list-group-item">Flavour : {{ drink.flavor_profile }}</li>
+        <li class="list-group-item">
+          {% for ingred in drink.ingredients %}
+          <span class="badge rounded-pill text-bg-primary">{{ ingred }}</span>
+          {% endfor %}
+        </li>
+        <li class="list-group-item">
+          {% for diet in drink.dietary_preferences %}
+          <span class="badge rounded-pill text-bg-success">{{ diet }}</span>
+          {% endfor %}
+        </li>
+        <li class="list-group-item">
+          {% for allergy in drink.allergy_info %}
+          <span class="badge rounded-pill text-bg-danger">{{ allergy }}</span>
+          {% endfor %}
+        </li>
+
+      </ul>
+    </div>
   </div>
-</div>
-<!-- card end -->
+  <!-- card end -->
+  {% endfor %}
 
-{% endfor %}
+{% else %}
+  <div style="width: 100%; height: 80vh;" class="d-flex justify-content-center align-items-center">
+    <div class="alert alert-danger alert-color" role="alert">
+        No Product Found!
+    </div>
+  </div>
+{% endif %}
+
 
 {% endblock %}
 
@@ -58,26 +68,26 @@
 <li class="nav-item dropdown" id="myDropdown">
   <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> Filter By </a>
   <ul class="dropdown-menu">
-      {% for main_list in menu %}
-      <li> <span class="dropdown-item"> {{ main_list }} 
-        
+    {% for main_list in menu %}
+    <li> <span class="dropdown-item"> {{ main_list }}
+
         <?xml version="1.0" encoding="iso-8859-1"?>
-        <svg fill="#fff" height="10px" width="10px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-           viewBox="0 0 330 330" xml:space="preserve">
-        <path id="XMLID_222_" d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001
+        <svg fill="#fff" height="10px" width="10px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xml:space="preserve">
+          <path id="XMLID_222_" d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001
           c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213
           C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606
-          C255,161.018,253.42,157.202,250.606,154.389z"/>
+          C255,161.018,253.42,157.202,250.606,154.389z" />
         </svg>
-      
+
       </span>
-        <ul class="submenu dropdown-menu">
-          {% for sub_list in menu[main_list] %}
-            <li><a class="dropdown-item" href="/{{main_list|lower}}/{{sub_list|lower}}"> {{sub_list|capitalize}} </a></li>
-          {% endfor %}
-        </ul>
-      </li>
-      {% endfor %}
+      <ul class="submenu dropdown-menu">
+        {% for sub_list in menu[main_list] %}
+        <li><a class="dropdown-item" href="/{{main_list|lower}}/{{sub_list|lower}}"> {{sub_list|capitalize}} </a></li>
+        {% endfor %}
+      </ul>
+    </li>
+    {% endfor %}
   </ul>
 </li>
 
