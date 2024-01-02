@@ -1,0 +1,124 @@
+[
+    {
+        "name": "Iced Coffee",
+        "category": "Coffee",
+        "ingredients": [
+            "coffee",
+            "milk",
+            "sugar",
+            "ice"
+        ],
+        "flavor_profile": "Refreshing",
+        "dietary_preferences": [
+            "Vegetarian",
+            "Gluten-free"
+        ],
+        "allergy_info": [
+            "None"
+        ],
+        "description": "Rejuvenating coffee drink served over frozen ice.",
+        "image_url": "iced_coffee.png"
+    },
+    {
+        "name": "Green Tea Smoothie",
+        "category": "Smoothie",
+        "ingredients": [
+            "green tea",
+            "banana",
+            "spinach",
+            "honey"
+        ],
+        "flavor_profile": "Healthy and Fruity",
+        "dietary_preferences": [
+            "Vegan",
+            "Gluten-free",
+            "Sugar-free"
+        ],
+        "allergy_info": [
+            "None"
+        ],
+        "description": "Delicious smoothie with green tea base.",
+        "image_url": "green_tea.png"
+    },
+    {
+        "name": "Mango Lassi",
+        "category": "Smoothie",
+        "ingredients": [
+            "mango",
+            "yogurt",
+            "milk",
+            "honey"
+        ],
+        "flavor_profile": "Tropical",
+        "dietary_preferences": [
+            "Vegetarian",
+            "Gluten-free"
+        ],
+        "allergy_info": [
+            "None"
+        ],
+        "description": "Refreshing mango-based smoothie with creamy yogurt.",
+        "image_url": "mango_lassi.png"
+    },
+    {
+        "name": "Chai Latte",
+        "category": "Tea",
+        "ingredients": [
+            "black tea",
+            "milk",
+            "honey",
+            "spices"
+        ],
+        "flavor_profile": "Warm and Spiced",
+        "dietary_preferences": [
+            "Vegetarian",
+            "Gluten-free"
+        ],
+        "allergy_info": [
+            "None"
+        ],
+        "description": "Aromatic spiced tea mixed with frothy milk.",
+        "image_url": "chai_latte.png"
+    },
+    {
+        "name": "Hibiscus Juice",
+        "category": "Juice",
+        "ingredients": [
+            "hibiscus flowers",
+            "water",
+            "lime juice",
+            "honey"
+        ],
+        "flavor_profile": "Tangy and Refreshing",
+        "dietary_preferences": [
+            "Vegan",
+            "Gluten-free",
+            "Sugar-free"
+        ],
+        "allergy_info": [
+            "None"
+        ],
+        "description": "Bright and tangy juice made from hibiscus flowers.",
+        "image_url": "hibiscus_juice.png"
+    },
+    {
+        "name": "Piña Colada",
+        "category": "Mocktail",
+        "ingredients": [
+            "pineapple juice",
+            "coconut cream",
+            "rum extract",
+            "ice"
+        ],
+        "flavor_profile": "Tropical and Creamy",
+        "dietary_preferences": [
+            "Vegetarian",
+            "Gluten-free"
+        ],
+        "allergy_info": [
+            "None"
+        ],
+        "description": "Classic tropical mocktail with a mix of pineapple and coconut flavors.",
+        "image_url": "pina_colada.png"
+    }
+]

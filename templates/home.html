@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+{% for drink in drinks %}
+    <!-- {% if loop.index != 2 %}
+        <div style="padding: 10px;
+                    background-color: #EEE;
+                    margin: 20px">
+            <p>#{{ loop.index }}</p>
+            <p style="font-size: 24px">{{ comment | upper }}</p>
+        </div>
+    {% endif %} -->
+
+      <!-- card start -->
+  <div class="col-12 col-lg-4 col-md-6 col-sm-12">
+    <div class="card mt-5" style="width: 18rem;">
+      <img src="static/images/{{ drink.image_url }}" class="card-img-top" alt="..." style="height: 10rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{ drink.name }}</h5>
+        <p class="card-text">{{ drink.description }}</p>
+      </div>
+            <ul class="list-group list-group-flush container-fluid">
+                <li class="list-group-item">Category : {{ drink.category }}</li>
+                <li class="list-group-item">Flavour : {{ drink.flavor_profile }}</li>
+              <li class="list-group-item">
+                  {% for ingred in drink.ingredients %}
+                    <span class="badge rounded-pill text-bg-primary">{{ ingred }}</span>
+                  {% endfor %}
+              </li>
+              <li class="list-group-item">
+                    {% for diet in drink.dietary_preferences %}
+                      <span class="badge rounded-pill text-bg-success">{{ diet }}</span>
+                    {% endfor %}
+              </li>
+                <li class="list-group-item">
+                        {% for allergy in drink.allergy_info %}
+                          <span class="badge rounded-pill text-bg-danger">{{ allergy }}</span>
+                        {% endfor %}
+                  </li>
+
+            </ul>
+    </div>
+  </div>
+    <!-- card end -->
+
+{% endfor %}
+
+{% endblock %}
