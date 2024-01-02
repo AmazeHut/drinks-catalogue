@@ -146,6 +146,15 @@
     scale: 1.2 !important;
 }
 
+.alert-color{
+    background-color: #fff0d3 !important;
+    color: #000 !important;
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+    border-radius: 15px !important;
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important; */
+}
+
 
 
 
